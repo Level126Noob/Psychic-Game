@@ -1,16 +1,28 @@
-var userguess = "Your Guesses so far"
-var wins = "0"
-var losses = "0"
+var computerguess = ['a','b','c','d','e','f','g','h','i','j','k','l',
+    'm','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 
-var directionsText = document.getElementById("directions");
-var userChoiceText = document.getElementById("tries");
-var winsText = document.getElementById("wins");
-var lossesText = document.getElementById("losses");
+var wins = 0;
+var losses = 0;
+var guesses = 9;
 
-var computerguesses = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+    var computerChoice = computerguess[Math.floor(Math.random() * computerguess.length)];
 
-document.onkeyup = function(event) {
+    console.log(computerChoice)
 
-    var userguess = event.key;
+document.onkeypress = function(event) {
+    var userGuess = event.key;
 
-    var computerguess = computerguesses[Math.floor(Math.random() * computerguesses.length)];
+    if(userGuess === computerChoice){
+        wins++;
+    }else{
+        guesses--;
+    }
+
+    if(guesses === 0){
+        losses++
+    }
+
+    document.getElementById('wins').innerHTML = "Wins: " + wins;
+    document.getElementById('losses').innerHTML = "losses: " + losses;
+    document.getElementById('guesses').innerHTML = "Guesses: " + guesses;}
+    
