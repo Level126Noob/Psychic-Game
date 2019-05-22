@@ -6,9 +6,9 @@ var losses = 0;
 var guesses = 9;
 var lettersguessed = [];
 
-    var computerChoice = computerguess[Math.floor(Math.random() * computerguess.length)];
+var computerChoice = computerguess[Math.floor(Math.random() * computerguess.length)];
 
-    console.log(computerChoice)
+console.log(computerChoice)
 
 document.onkeypress = function(event) {
     var userGuess = event.key;
@@ -16,6 +16,7 @@ document.onkeypress = function(event) {
     if(userGuess === computerChoice){
         wins++;
         setTimeout(computerChoice = computerguess[Math.floor(Math.random() * computerguess.length)]);
+        console.log(computerChoice)
     }else{
         guesses--;
         lettersguessed.push(userGuess);
