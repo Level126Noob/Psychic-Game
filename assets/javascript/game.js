@@ -4,6 +4,7 @@ var computerguess = ['a','b','c','d','e','f','g','h','i','j','k','l',
 var wins = 0;
 var losses = 0;
 var guesses = 9;
+var lettersguessed = [];
 
     var computerChoice = computerguess[Math.floor(Math.random() * computerguess.length)];
 
@@ -19,10 +20,13 @@ document.onkeypress = function(event) {
     }
 
     if(guesses === 0){
-        losses++
+        losses++;
+        guesses = 9;
+        lettersguessed = [];
     }
 
     document.getElementById('wins').innerHTML = "Wins: " + wins;
     document.getElementById('losses').innerHTML = "losses: " + losses;
-    document.getElementById('guesses').innerHTML = "Guesses: " + guesses;}
+    document.getElementById('guesses').innerHTML = "Guesses: " + guesses;
+    document.getElementById('lettersguessed').innerHTML = "You Guessed: " + [userGuess];}
     
