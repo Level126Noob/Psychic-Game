@@ -15,8 +15,10 @@ document.onkeypress = function(event) {
 
     if(userGuess === computerChoice){
         wins++;
+        setTimeout(computerChoice = computerguess[Math.floor(Math.random() * computerguess.length)]);
     }else{
         guesses--;
+        lettersguessed.push(userGuess);
     }
 
     if(guesses === 0){
@@ -28,5 +30,5 @@ document.onkeypress = function(event) {
     document.getElementById('wins').innerHTML = "Wins: " + wins;
     document.getElementById('losses').innerHTML = "losses: " + losses;
     document.getElementById('guesses').innerHTML = "Guesses: " + guesses;
-    document.getElementById('lettersguessed').innerHTML = "You Guessed: " + [userGuess];}
+    document.getElementById('lettersguessed').innerHTML = "You Guessed: " + [lettersguessed];}
     
