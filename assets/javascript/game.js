@@ -14,6 +14,7 @@ document.onkeypress = function(event) {
     var userGuess = event.key;
 
     if(userGuess === computerChoice){
+        alert("You Won! Good Job!")
         wins++;
         setTimeout(computerChoice = computerguess[Math.floor(Math.random() * computerguess.length)]);
         console.log(computerChoice)
@@ -23,6 +24,7 @@ document.onkeypress = function(event) {
     }
 
     if(guesses === 0){
+        alert("You Lost! Keep Trying!")
         losses++;
         guesses = 9;
         lettersguessed = [];
