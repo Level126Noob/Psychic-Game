@@ -19,7 +19,6 @@ function game() {
             alert("You Won! Good Job!")
             wins++;
             game();
-            console.log(computerChoice)
         } else {
             guesses--;
             lettersguessed.push(userGuess);
